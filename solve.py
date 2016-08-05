@@ -12,7 +12,7 @@ sample_grid_medium = [0,0,0,3,0,4,0,0,0,0,1,2,0,0,0,8,9,0,0,6,0,0,0,0,0,2,0,6,0,
 sample_grid_hard = [0,0,0,0,3,7,6,0,0,0,0,0,6,0,0,0,9,0,0,0,8,0,0,0,0,0,4,0,9,0,0,0,0,0,0,1,6,0,0,0,0,0,0,0,9,3,0,0,0,0,0,0,4,0,7,0,0,0,0,0,8,0,0,0,1,0,0,0,9,0,0,0,0,0,2,5,4,0,0,0,0]
 
 for i in range(len(sample_grid_easy)):
-    SUDOKU_GRID[i] = str(sample_grid_hard[i])
+    SUDOKU_GRID[i] = str(sample_grid_medium[i])
 
 def disp_grid(grid):
     line_break = '-----------------------'
@@ -163,6 +163,7 @@ if __name__ == '__main__':
                 print('Solved in ' + str(times_updated) + ' iterations')
             else:
                 print('Failed to solve after ' + str(times_updated) + ' iterations')
+                disp_grid(get_all_possible_values(new_grid))
         else:
             old_grid = new_grid
             times_updated += 1
